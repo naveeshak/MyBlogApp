@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Single selectable message card used in group selection screen -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selectItemLayout"
+    android:layout_width="match_parent"
+    android:layout_height="82dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="6dp"
+    android:background="@drawable/message_card_background"
+    android:elevation="4dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- Checkbox used to select this message -->
+    <CheckBox
+        android:id="@+id/messageCheckBox"
+        android:layout_width="42dp"
+        android:layout_height="42dp" />
+
+    <!-- Image preview for selected message list item -->
+    <ImageView
+        android:id="@+id/selectItemImage"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:background="#DDDDDD"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <!-- Shows title and short content preview of the selectable message -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/selectItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Message Title"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/selectItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Message preview..."
+            android:textColor="#555555"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

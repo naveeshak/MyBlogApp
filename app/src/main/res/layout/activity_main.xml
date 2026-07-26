@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Main screen layout for showing saved blog messages -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:fitsSystemWindows="true">
+
+    <!-- Header section with app title and select messages button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="#1F6B2A"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="18dp"
+            android:paddingEnd="14dp">
+
+            <TextView
+                android:id="@+id/appTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="My Blog App"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/selectMessagesButton"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Select messages"
+                android:padding="9dp"
+                android:src="@drawable/ic_select_messages" />
+
+        </LinearLayout>
+
+        <!-- Search input used to filter saved messages -->
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/search_background"
+            android:drawableEnd="@drawable/ic_search_black"
+            android:hint="Search messages..."
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/emptyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="No messages yet.\nClick + to create your first message."
+            android:textColor="#777777"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <!-- RecyclerView displays the list of saved blog messages -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messageRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingStart="8dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="12dp" />
+
+    </LinearLayout>
+
+    <!-- Floating add button opens the create message screen -->
+    <Button
+        android:id="@+id/addMessageButton"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="#1F6B2A"
+        android:elevation="8dp"
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp" />
+
+</FrameLayout>

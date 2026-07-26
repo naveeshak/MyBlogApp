@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen layout for editing an existing blog message -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F3F3"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- Header used to go back from edit screen -->
+        <TextView
+            android:id="@+id/editHeader"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="#1F6B2A"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:text="←  Edit Message"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:text="Title"
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <!-- Existing title and message are loaded into these input fields -->
+        <EditText
+            android:id="@+id/editTitleInput"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/form_input_background"
+            android:hint="Enter message title"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:text="Message"
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/editMessageInput"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/form_input_background"
+            android:gravity="top|start"
+            android:hint="Write your message here..."
+            android:padding="14dp"
+            android:textSize="14sp" />
+
+        <!-- Frame used to preview and change the attached image -->
+        <FrameLayout
+            android:id="@+id/editImageFrame"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="18dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/editImagePreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="#DDDDDD"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/changeImageButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="8dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Change image"
+                android:padding="4dp"
+                android:src="@drawable/ic_change_image_black" />
+
+        </FrameLayout>
+
+        <!-- Button saves updated message details -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/attach_button_background"
+            android:drawableStart="@android:drawable/ic_menu_camera"
+            android:drawablePadding="10dp"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:text="Attach Image"
+            android:textAllCaps="false"
+            android:textColor="#1F6B2A"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/updateMessageButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/green_button_background"
+            android:text="Update Message"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>
